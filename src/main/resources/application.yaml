@@ -1,0 +1,15 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /user-service
+
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/dev_user_info_system
+    username: root
+    password: admin
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MariaDBDialect
