@@ -9,6 +9,6 @@ public interface UserService  {
 
   Users saveUser(Users user);
 
-  String encryptPassword(String password) throws Exception;
+ String encryptPassword(String password) throws Exception;
 
 }

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-  @Value("${encryption.secret-key.public-key}")
+  @Value("${rsa.encryption.secret-key.public-key}")
   private String publicKey;
   @Autowired
   UserRepository userRepository;
@@ -24,11 +24,11 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public Users saveUser(Users user) {
-    return  userRepository.save(user);
+    return userRepository.save(user);
   }
 
   @Override
   public String encryptPassword(String password) throws Exception {
-    return RsaEncryptorDecryptor.encrypt(password,publicKey);
+    return RsaEncryptorDecryptor.encrypt(password, publicKey);
   }
 }
